@@ -11,10 +11,14 @@ def port_scan(port, target, sock):
     except:
         return False
 
-
+'''
+the main part of the program that handles user input and output
+'''
 def main():
-    pass
+    # create a new INET TCP socket to use
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+    target = input("Insert the address of the server to scan: ")
 
 if __name__ == '__main__':
     main()
