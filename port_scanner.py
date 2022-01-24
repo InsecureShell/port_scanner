@@ -1,6 +1,9 @@
 import socket
 
-
+'''
+takes the port number and target and attempts a connection on that port
+returns true if a connection is successful
+'''
 def port_scan(port, target, sock):
     try:
         connection = sock.connect((target, port))
