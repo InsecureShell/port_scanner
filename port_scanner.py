@@ -6,9 +6,10 @@ returns true if a connection is successful
 '''
 def port_scan(port, target, sock):
     try:
-        sock.connect(target, port)
+        sock.connect((target, port))
         return True
-    except:
+    except Exception as e:
+        print(e)
         return False
 
 '''
