@@ -20,5 +20,9 @@ def main():
 
     target = input("Insert the address of the server to scan: ")
 
+    beginning_port = input("Enter the first port in the port range: ")
+
+    end_port = input("Enter the last port in the port range: ")
+
 if __name__ == '__main__':
     main()
