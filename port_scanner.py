@@ -8,8 +8,7 @@ def port_scan(port, target, sock):
     try:
         sock.connect((target, port))
         return True
-    except Exception as e:
-        print(e)
+    except:
         return False
 
 '''
@@ -26,9 +25,11 @@ def main():
 
     # scan each port and try to connect to it to see if it's open
     for port in range(beginning_port, end_port):
+
         # create a new INET TCP socket to use
         # need to make a new one with each loop to connect to each port
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
         if port_scan(port, target, sock):
             print("Port ", port, " is open")
 
