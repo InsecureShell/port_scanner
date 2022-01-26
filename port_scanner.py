@@ -21,9 +21,9 @@ def main():
     # get target and port info from user
     target = input("Insert the address of the server to scan: ")
 
-    beginning_port = input("Enter the first port in the port range: ")
+    beginning_port = int(input("Enter the first port in the port range: "))
 
-    end_port = input("Enter the last port in the port range: ")
+    end_port = int(input("Enter the last port in the port range: "))
 
     # scan each port and try to connect to it to see if it's open
     for x in range(beginning_port, end_port):
