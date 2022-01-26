@@ -24,7 +24,7 @@ def main():
     end_port = int(input("Enter the last port in the port range: "))
 
     # scan each port and try to connect to it to see if it's open
-    for port in range(beginning_port, end_port):
+    for port in range(beginning_port, (end_port +1)):
 
         # create a new INET TCP socket to use
         # need to make a new one with each loop to connect to each port
