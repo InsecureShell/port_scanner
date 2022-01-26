@@ -16,8 +16,6 @@ def port_scan(port, target, sock):
 the main part of the program that handles user input and output
 '''
 def main():
-    # create a new INET TCP socket to use
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # get target and port info from user
     target = input("Enter the address of the server to scan: ")
@@ -28,6 +26,9 @@ def main():
 
     # scan each port and try to connect to it to see if it's open
     for port in range(beginning_port, end_port):
+        # create a new INET TCP socket to use
+        # need to make a new one with each loop to connect to each port
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         if port_scan(port, target, sock):
             print("Port ", port, " is open")
 
