@@ -6,7 +6,7 @@ returns true if a connection is successful
 '''
 def port_scan(port, target, sock):
     try:
-        connection = sock.connect((target, port))
+        sock.connect((target, port))
         return True
     except:
         return False
@@ -19,7 +19,7 @@ def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # get target and port info from user
-    target = input("Insert the address of the server to scan: ")
+    target = input("Enter the address of the server to scan: ")
 
     beginning_port = int(input("Enter the first port in the port range: "))
 
@@ -29,6 +29,7 @@ def main():
     for x in range(beginning_port, end_port):
         if port_scan(x, target, sock):
             print("Port ", x, " is open")
+
 
 if __name__ == '__main__':
     main()
