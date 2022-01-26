@@ -6,7 +6,7 @@ returns true if a connection is successful
 '''
 def port_scan(port, target, sock):
     try:
-        sock.connect((target, port))
+        sock.connect(target, port)
         return True
     except:
         return False
@@ -26,9 +26,9 @@ def main():
     end_port = int(input("Enter the last port in the port range: "))
 
     # scan each port and try to connect to it to see if it's open
-    for x in range(beginning_port, end_port):
-        if port_scan(x, target, sock):
-            print("Port ", x, " is open")
+    for port in range(beginning_port, end_port):
+        if port_scan(port, target, sock):
+            print("Port ", port, " is open")
 
 
 if __name__ == '__main__':
